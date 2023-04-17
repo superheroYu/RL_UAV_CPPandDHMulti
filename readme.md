@@ -1,5 +1,6 @@
-##目录
+## 目录
 
+- [目录](#目录)
 - [介绍](#介绍)
 - [Requirements](#requirements)
 - [如何使用](#如何使用)
@@ -58,7 +59,7 @@ python eval.py --weights models/manhattan32_DHMulti_best --config config/manhatt
 --samples                   评估回合数
 --seed                      设置随机种子
 --show                      是否展示图像，无论是否展示会保存在eval文件夹中
---num_agents                智能体的数量如12 表示随机范围在  [1,2] agents, 如果 11 则为单智能体
+--num_agents                智能体的数量如12 表示随机范围智能体数量范围在  [1,2]之间, 如果 11 则为单智能体
 --target                    评估任务，选择DHMulti或CPP
 ```
 
