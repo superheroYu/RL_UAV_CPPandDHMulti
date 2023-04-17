@@ -9,7 +9,7 @@
 - [License](#license)
 ## 介绍
 
-本仓库是基于论文 ["Multi-UAV Path Planning for Wireless Data Harvesting with Deep Reinforcement Learning"](https://ieeexplore.ieee.org/document/9437338) 与论文以及其TensorFlow版本的代码["uav_data_harvesting"](https://github.com/hbayerlein/uav_data_harvesting)和["uavSim"](https://github.com/theilem/uavSim)的改写而成的pytorch版本代码。
+本仓库是基于论文 ["Multi-UAV Path Planning for Wireless Data Harvesting with Deep Reinforcement Learning"](https://ieeexplore.ieee.org/document/9437338) 与论文 ["UAV Path Planning using Global and Local Map Information with Deep Reinforcement Learning"](https://ieeexplore.ieee.org/abstract/document/9659413)以及其TensorFlow版本的代码["uav_data_harvesting"](https://github.com/hbayerlein/uav_data_harvesting)和["uavSim"](https://github.com/theilem/uavSim)进行改写而成的pytorch版本代码。
 
 
 ## Requirements
