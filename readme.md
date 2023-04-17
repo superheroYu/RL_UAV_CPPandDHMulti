@@ -65,7 +65,7 @@ python eval.py --weights models/manhattan32_DHMulti_best --config config/manhatt
 
 
 ## 资源
-论文中的城市环境“manhattan32”和“urban50”已包含在“res”目录中。地图信息格式为PNG文件，一个像素代表一个网格世界单元。像素颜色根据以下规则确定单元格类型：
+论文中的城市环境“manhattan32”和“urban50”已包含在“uavmap_figure”目录中。地图信息格式为PNG文件，一个像素代表一个网格世界单元。像素颜色根据以下规则确定单元格类型：
 
 * 红色#ff0000不允许飞行区域(NFZ)
 * 绿色#00ff00建筑物阻止无线连接(UAV可以飞越)
