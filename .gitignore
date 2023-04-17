@@ -1,0 +1,5 @@
+.vscode/
+logs/*
+eval/*
+models/*
+uavmap_figure/*.npy
