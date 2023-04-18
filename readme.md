@@ -51,7 +51,7 @@ tensorboard --logdir logs
 评估：
 
 ```
-python eval.py --weights models/manhattan32_DHMulti_best --config config/manhattan32_DHMulti.json --id manhattan32_eval --samples 100
+python eval.py --target DHMulti --weights models/manhattan32_DHMulti_best --config config/manhattan32_DHMulti.json --id manhattan32_eval --samples 100
 
 --weights                   训练好的模型路径
 --config                    json格式的训练配置文件
