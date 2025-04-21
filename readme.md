@@ -34,7 +34,12 @@ conda activate uav
 ```
 
 安装依赖包：
-
+如果cuda版本为12.6，则使用以下命令安装依赖包：
+```bash
+pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu126
+```
+其他cuda版本请自行安装torch2.6.0，torchvision0.21.0，请参考https://pytorch.org/
+再删除requirements.txt中torch和torchvision的版本，然后使用以下命令安装：
 ```bash
 pip install -r requirements.txt
 ```
