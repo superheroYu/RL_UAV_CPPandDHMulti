@@ -9,23 +9,35 @@
 - [License](#license)
 ## 介绍
 
-本仓库是基于论文 ["Multi-UAV Path Planning for Wireless Data Harvesting with Deep Reinforcement Learning"](https://ieeexplore.ieee.org/document/9437338) 与论文 ["UAV Path Planning using Global and Local Map Information with Deep Reinforcement Learning"](https://ieeexplore.ieee.org/abstract/document/9659413)以及其TensorFlow版本的代码["uav_data_harvesting"](https://github.com/hbayerlein/uav_data_harvesting)和["uavSim"](https://github.com/theilem/uavSim)进行改写而成的pytorch版本代码。
+本项目是 PyTorch 实现版本，其核心思想源自论文 ["Multi-UAV Path Planning for Wireless Data Harvesting with Deep Reinforcement Learning"](https://ieeexplore.ieee.org/document/9437338) 和 ["UAV Path Planning using Global and Local Map Information with Deep Reinforcement Learning"](https://ieeexplore.ieee.org/abstract/document/9659413)。代码实现参考并改编自原作者提供的 TensorFlow 版本：["uav_data_harvesting"](https://github.com/hbayerlein/uav_data_harvesting) 和 ["uavSim"](https://github.com/theilem/uavSim)。
 
+项目中的多智能体部分采用了基于 Agent Environment Cycle (AEC) 的范式，这与 PettingZoo 的 AEC 环境类似，但本项目并未直接使用 PettingZoo 库。请注意将其与基于部分可观察随机博弈 (POSG) 的多智能体强化学习算法区分开来。当前实现未采用多进程或多线程进行数据收集，如有需要可自行修改。欢迎联系作者共同完善本项目。
+
+## 更新
+
+- 2025-04-21 更新了依赖包，可以使用较新版的各个依赖包，如torch，numpy，matplotlib，scikit-image，tqdm，tensorboard，opencv-python等，修复了一些文件夹未创建的问题，增加了.gitignore文件。
 
 ## Requirements
 
-```
-python==3.8 or newer
-numpy==1.18.5 or newer
-pytorch==1.31.1
-matplotlib==3.3.0 or newer
-scikit-image==0.18.3
-tqdm==4.45.0 or newer
-```
+详细的依赖包及其版本请参见 `requirements.txt` 文件。
+
 本仓库的代码运行在Windows系统采用单英伟达显卡进行训练，其他系统应该也可以运行此代码
 
 
 ## 如何使用
+
+创建虚拟环境  ：
+
+```bash
+conda create -n uav python=3.9.20
+conda activate uav
+```
+
+安装依赖包：
+
+```bash
+pip install -r requirements.txt
+```
 
 训练，如训练数据收集任务(DHMulti)多智能体
 
@@ -65,7 +77,7 @@ python eval.py --target DHMulti --weights models/manhattan32_DHMulti_best --conf
 
 
 ## 资源
-论文中的城市环境“manhattan32”和“urban50”已包含在“uavmap_figure”目录中。地图信息格式为PNG文件，一个像素代表一个网格世界单元。像素颜色根据以下规则确定单元格类型：
+论文中的城市环境"manhattan32"和"urban50"已包含在"uavmap_figure"目录中。地图信息格式为PNG文件，一个像素代表一个网格世界单元。像素颜色根据以下规则确定单元格类型：
 
 * 红色#ff0000不允许飞行区域(NFZ)
 * 绿色#00ff00建筑物阻止无线连接(UAV可以飞越)
@@ -73,14 +85,14 @@ python eval.py --target DHMulti --weights models/manhattan32_DHMulti_best --conf
 * 黄色#ffff00建筑物阻止无线连接 + NFZ(UAV无法飞越)
 * 如果您想创建一个新地图，您可以使用任何工具来设计一个与所需地图具有相同像素尺寸和上述颜色代码的PNG。
 
-阴影地图为每个位置和每个物联网设备定义了是否存在直线视线(LoS)或非直线视线(NLoS)连接，当第一次使用新地图进行训练时会自动计算，并保存到“uavmap_figure”目录中作为NPY文件。
+阴影地图为每个位置和每个物联网设备定义了是否存在直线视线(LoS)或非直线视线(NLoS)连接，当第一次使用新地图进行训练时会自动计算，并保存到"uavmap_figure"目录中作为NPY文件。
 
 
 ## Reference
 
 本代码的文献引用与TensorFlow版本的一致：
 
-[1] M. Theile, H. Bayerlein, R. Nai, D. Gesbert, M. Caccamo, “UAV Path Planning using Global and Local Map Information with Deep Reinforcement Learning" 20th International Conference on Advanced Robotics (ICAR), 2021. 
+[1] M. Theile, H. Bayerlein, R. Nai, D. Gesbert, M. Caccamo, "UAV Path Planning using Global and Local Map Information with Deep Reinforcement Learning" 20th International Conference on Advanced Robotics (ICAR), 2021. 
 
 ```
 @inproceedings{theile2021uav,
@@ -92,23 +104,3 @@ python eval.py --target DHMulti --weights models/manhattan32_DHMulti_best --conf
   organization={IEEE}
 }
 ```
-
-for the (multi-agent) Data Harvesting paper:
-
-[2] H. Bayerlein, M. Theile, M. Caccamo, and D. Gesbert, “Multi-UAV path planning for wireless data harvesting with deep reinforcement learning," IEEE Open Journal of the Communications Society, vol. 2, pp. 1171-1187, 2021.
-
-```
-@article{bayerlein2021multi,
-  title={Multi-uav path planning for wireless data harvesting with deep reinforcement learning},
-  author={Bayerlein, Harald and Theile, Mirco and Caccamo, Marco and Gesbert, David},
-  journal={IEEE Open Journal of the Communications Society},
-  volume={2},
-  pages={1171--1187},
-  year={2021},
-  publisher={IEEE}
-}
-```
-
-## License 
-
-This code is under a BSD license.

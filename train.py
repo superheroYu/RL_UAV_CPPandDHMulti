@@ -22,9 +22,17 @@ def main_cpp(params):
 def main_dhmulti(params):
     env = DHMultiEnvironment(params)
     env.run()
-    
+
+def create_dirs():
+    if not os.path.exists("models"):
+        os.makedirs("models")
+    if not os.path.exists("logs"):
+        os.makedirs("logs")
+    if not os.path.exists("eval"):
+        os.makedirs("eval")
 
 if __name__ == "__main__":
+    create_dirs() # 创建文件夹
     args = get_args()
     if args.gen_config:
         if args.target == "DHMulti":

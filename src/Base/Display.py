@@ -57,7 +57,7 @@ class Display:
 
         neither_color = np.ones(
             (area_y_max, area_x_max, 3),
-            dtype=np.float)  # 设置既不是禁飞区、也不是起飞区、也不是green参数指定区域的部分为白色
+            dtype=np.float32)  # 设置既不是禁飞区、也不是起飞区、也不是green参数指定区域的部分为白色
         grid_image = green_color * green + nfz_color * nfz + slz_color * slz + neither_color * neither  # 合成网格图像
 
         # 根据value_map来转换网格图片的明亮度

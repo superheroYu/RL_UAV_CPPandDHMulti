@@ -1,5 +1,68 @@
 .vscode/
-# logs/*
-# eval/*
+logs/*
+eval/*
 models/*
 uavmap_figure/*.npy
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.coverage
+*.coverage.*
+.coverage.*
+htmlcov/
+.pytest_cache/
+.pyc 
+.pyo
+.pyd
+.pyw
+.pyz
+.pywz
+.pywz.py
+
+
+# Virtual environment
+venv/
+ENV/
+env/
+*/env/
+*/venv/
+.venv/
+*.env
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+develop-eggs/
+eggs/
+sdist/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.manifest
+*.spec
+
+# IDEs / Editors
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-workspace
+*.sublime-project
+nbproject/
+
+# Other
+*.log
+*.pot
+*.pyt
+local_settings.py
+celerybeat-schedule
+celerybeat.pid
+db.sqlite3
+db.sqlite3-journal
+instance/
