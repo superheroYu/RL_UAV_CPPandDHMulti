@@ -29,8 +29,8 @@ class RandomTargetGenerator:
 
     def __generate_random_shapes(self, min_shapes, max_shapes):
         """ 生成随机形状 """
-        img, _ = random_shapes(self.shape, max_shapes, min_shapes=min_shapes, multichannel=False,
-                            allow_overlap=True, random_seed=np.random.randint(2**31 - 1))
+        img, _ = random_shapes(self.shape, max_shapes, min_shapes=min_shapes, channel_axis=None,
+                            allow_overlap=True, rng=np.random.randint(2**31 - 1))
         attempt = np.array(img != 255, dtype=bool)  # 转换为布尔类型的数组
         return attempt, np.sum(attempt)  # 返回形状及其面积
 
