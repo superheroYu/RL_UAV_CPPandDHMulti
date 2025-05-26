@@ -53,7 +53,7 @@ if __name__ == "__main__":
         params.agent_params.resume = args.resume
     
     if args.id is not None:
-        params.model_stats_params.save_model = "models/" + args.id
+        params.model_stats_params.save_model_path = "models/" + args.id
         params.model_stats_params.log_file_name = args.id
         
     if args.target == "DHMulti":

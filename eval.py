@@ -54,7 +54,7 @@ if __name__ == "__main__":
     params = read_config(args.config)
 
     if args.id is not None:
-        params.model_stats_params.save_model = "models/" + args.id
+        params.model_stats_params.save_model_path = "models/" + args.id
         params.model_stats_params.log_file_name = args.id
     else:
         args.id = params.model_stats_params.log_file_name

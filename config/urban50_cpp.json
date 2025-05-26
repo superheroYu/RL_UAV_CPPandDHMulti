@@ -1,6 +1,6 @@
 {
     "model_stats_params": {
-        "save_model": "models/urban50_cpp",
+        "save_model_path": "models/urban50_cpp",
         "moving_average_length": 200,
         "log_file_name": "urban50_cpp",
         "training_images": false

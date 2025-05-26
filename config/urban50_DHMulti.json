@@ -1,6 +1,6 @@
 {
     "model_stats_params": {
-        "save_model": "models/urban50_DHMulti",
+        "save_model_path": "models/urban50_DHMulti",
         "moving_average_length": 50,
         "log_file_name": "urban50_DHMulti",
         "training_images": false

@@ -2,7 +2,7 @@
     "model_stats_params": {
         "save_model_path": "models/save_model_path",
         "moving_average_length": 50,
-        "log_file_name": "20230417-184231",
+        "log_file_name": "20250526-043250",
         "training_images": false
     },
     "step_count": 0,
